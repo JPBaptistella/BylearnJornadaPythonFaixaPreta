@@ -1,34 +1,35 @@
 import PySimpleGUI as sg
+from CLO.utils import inner_element_space
 
 def get_layout():
-    
-    frame_header =[
+    menu =[
+            [
+            sg.Text(
+                'Selina',
+                )
+            ],
 
-        [
-        sg.Text('Selina')
-        ],
-
-        [
-         sg.Button(
-                'CheckList Operação',
-                key='-Operação-',
-                size=(10,1),
-            )
-        ],
-
-        [
+            [
             sg.Button(
-                'CheckList Limpeza',
-                key='-Limpeza-',
-                size=(10,1),
-            )
-        ],
-    ]
-    
+                    'CheckList Operação',
+                    key='-Operação-',
+                    size=(20,1),
+                )
+            ],
+
+            [
+                sg.Button(
+                    'CheckList Limpeza',
+                    key='-Limpeza-',
+                    size=(20,1),
+                )
+            ],
+        ]
+        
     layout = [
         [
-            sg.Frame('Menu',frame_header)
-        ]
+            menu
+        ],
     ]
 
     return layout
