@@ -1,7 +1,7 @@
 #Definindo dia da semana e data
 from datetime import datetime
 dia_hoje = datetime.today().strftime('%A')
-data_atual=date.today()
+data_atual= datetime.today()
 data_atual='{}'.format(data_atual.day)
 
 #dados
@@ -25,23 +25,24 @@ dia=['Segunda','Terça','Quarta','Quinta','Sexta']
 semana= [segunda,terca,quarta,quinta,sexta]
 
 #Tarefas diárias
-print('As tarefas diárias são:')
-for tarefa in diario:
-  print(tarefa)
+def tarefa_cllbd():
+    for tarefa in diario:
+      print(tarefa)
 
 #Tarefas mensais
-if data_atual == '1':
-  print('A tarefa mensal é:', mensal[0])
-elif data_atual == '15':
-  print('A tarefa mensal é:', mensal[1])
-else:
-  print('Não há tarefas mensais')
+def tarefa_cllbm():
+  if data_atual == '1':
+    print('A tarefa mensal é:', mensal[0])
+  elif data_atual == '15':
+    print('A tarefa mensal é:', mensal[1])
+  else:
+    print('Não há tarefas mensais')
 
 #Tarefas semanais
 if dia_hoje == 'Monday':
     print('Tarefa da Segunda:',segunda)
 elif dia_hoje == 'Tuesday':
-  print('Tarefa da Terça:',terça)
+  print('Tarefa da Terça:',terca)
 elif dia_hoje == 'Wednesday':
   print('Tarefa da Quarta:',quarta)
 elif dia_hoje == 'Thursday':
