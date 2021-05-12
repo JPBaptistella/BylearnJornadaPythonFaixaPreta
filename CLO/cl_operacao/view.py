@@ -5,7 +5,8 @@ def get_layout():
         [
             sg.Button(
                 'Manhã',
-                key='-Manhã-')
+                key='-Manhã-'
+                )
         ],
 
         [
@@ -17,7 +18,7 @@ def get_layout():
 
     layout =[
         [
-            sg.Text('CheckList Operação')
+            sg.Text('CheckLists das Operações')
         ],
         [
             sg.Frame(
@@ -26,7 +27,10 @@ def get_layout():
                 )
         ],
         [
-            sg.Button('Voltar'),
+            sg.Button(
+                'Voltar',
+                key='-Back-',
+            ),
             sg.Button(
                 'CheckList Limpeza',
                 key='-CLL-'),
