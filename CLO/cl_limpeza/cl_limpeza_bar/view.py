@@ -8,7 +8,7 @@ def get_layout():
         [
             sg.Output(
                 size=(100,1),
-                key='-TDB-',
+                key='-TLDB-',
             )
         ],
 
@@ -18,7 +18,7 @@ def get_layout():
         [
             sg.Output(
                 size=(100,1),
-                key='-TSB-',
+                key='-TLSB-',
             )
         ],     
 
@@ -28,7 +28,7 @@ def get_layout():
         [
             sg.Output(
                 size=(100,1),
-                key='-TMB-',
+                key='-TLMB-',
             )
         ],
     ]
