@@ -17,6 +17,9 @@ def root_folder():
 
     return os.path.join(os.path.dirname(main_file), os.pardir)
 
+def string_null_or_empty(string):
+    return not string or string.isspace()
+
 def verificador_data():
     dia_hoje = datetime.today().strftime('%A')
     data_atual= datetime.today()

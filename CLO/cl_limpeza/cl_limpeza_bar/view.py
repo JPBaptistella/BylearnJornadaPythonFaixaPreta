@@ -1,36 +1,42 @@
+from CLO.cl_limpeza.cl_limpeza_bar.manager import load_TLDB, load_TLSB, load_TLMB
 import PySimpleGUI as sg
+
+TLDB = load_TLDB()
+TLSB = load_TLSB()
+TLMB = load_TLMB()
 
 def get_layout():
     frame_tarefas = [
         [
             sg.Text('Diária'),
         ],
+
         [
-            sg.Output(
-                size=(100,1),
-                key='-TLDB-',
+            sg.Multiline(
+                TLDB,
             )
         ],
 
         [
             sg.Text('Semanal'),
         ],
+
         [
-            sg.Output(
-                size=(100,1),
-                key='-TLSB-',
+            sg.Multiline(
+                TLSB,
             )
-        ],     
+        ],    
 
         [
             sg.Text('Mensal'),
         ],
+
         [
-            sg.Output(
-                size=(100,1),
-                key='-TLMB-',
+            sg.Multiline(
+                TLMB,
             )
         ],
+
     ]
 
     layout = [

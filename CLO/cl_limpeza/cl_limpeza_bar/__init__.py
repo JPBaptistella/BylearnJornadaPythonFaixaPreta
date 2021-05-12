@@ -1,3 +1,4 @@
+from CLO.cl_limpeza.cl_limpeza_bar.manager import load_TLDB
 from CLO.cl_limpeza.cl_limpeza_bar import view
 import PySimpleGUI as sg
 from PySimpleGUI import WIN_CLOSED
@@ -21,7 +22,7 @@ class Tela_CLLB:
                     self.window.close()
                     self.MenuL.unhide_window()
                     break
-    
+
     def close_window(self):
         if self.window is not None:
             self.window.Close()
