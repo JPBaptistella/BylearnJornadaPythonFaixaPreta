@@ -45,7 +45,10 @@ def get_layout():
         ],
 
         [
-            sg.Button('Voltar'),
+            sg.Button(
+                'Voltar',
+                key='-Back-'
+                ),
             sg.Button('CheckList de Operação'),
         ],
     ]

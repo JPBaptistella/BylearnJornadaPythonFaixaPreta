@@ -5,10 +5,11 @@ from CLO.cl_limpeza.cl_limpeza_bar.manager import initialize as init_Tela_CLLB
 from CLO.cl_limpeza.cl_limpeza_salao.manager import initialize as init_Tela_CLLS
 from CLO.cl_limpeza.cl_limpeza_salao.manager import initialize as init_Tela_CLLC
 
-class Menu_Cl:
-    def __init__(self):
+class Menu_CLL:
+    def __init__(self, Menu):
         self.window = None
-
+        self.menu=Menu
+        
     def instantiate(self):
         if self.window == None:
             self.window = view.get_window()
@@ -19,21 +20,22 @@ class Menu_Cl:
         while True:
             event, values = self.window.read()
 
-            if event == WIN_CLOSED:
-                self.close_window()
+            if event in (WIN_CLOSED,'-Back-'):
+                self.window.close()
+                self.menu.unhide_window()
                 break
 
             elif event == '-Bar-':
                 self.hide_window()
-                init_Tela_CLLB()
+                init_Tela_CLLB(self)
             
             elif event == '-Salão-':
                 self.hide_window()
-                init_Tela_CLLS()
+                init_Tela_CLLS(self)
 
-            elif event == '-Cozinha-':
+            elif event == 'Cozinha de Apoio':
                 self.hide_window()
-                init_Tela_CLLC()
+                init_Tela_CLLC(self)
     
     def close_window(self):
         if self.window is not None:

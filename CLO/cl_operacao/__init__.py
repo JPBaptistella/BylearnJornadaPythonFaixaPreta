@@ -3,9 +3,10 @@ import PySimpleGUI as sg
 from PySimpleGUI import WIN_CLOSED
 
 class Menu_CLO:
-    def __init__(self):
+    def __init__(self, Menu):
         self.window = None
-
+        self.menu=Menu
+        
     def instantiate(self):
         if self.window == None:
             self.window = view.get_window()

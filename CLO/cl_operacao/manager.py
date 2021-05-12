@@ -1,5 +1,5 @@
-def initialize():
+def initialize(menu):
     from CLO.cl_operacao import Menu_CLO
 
-    Menu= Menu_CLO()
-    Menu.enable_window()
+    MenuO= Menu_CLO(menu)
+    MenuO.enable_window()

@@ -1,8 +1,8 @@
 import PySimpleGUI as sg
 from PySimpleGUI import WIN_CLOSED
 from CLO.menu import  view
-from CLO.cl_operacao.manager import initialize as init_Menu_Clo 
-from CLO.cl_limpeza.manager import initialize as init_Menu_Cl
+from CLO.cl_operacao.manager import initialize as init_Menu_CLO 
+from CLO.cl_limpeza.manager import initialize as init_Menu_CLL
 class Menu:
     def __init__(self):
         self.window = None
@@ -23,11 +23,11 @@ class Menu:
 
             if event == '-Operação-':
                 self.hide_window()
-                init_Menu_Clo()
+                init_Menu_CLO(self)
 
             if event == '-Limpeza-':
                 self.hide_window()
-                init_Menu_Cl()
+                init_Menu_CLL(self)
    
     def close_window(self):
         if self.window is not None:

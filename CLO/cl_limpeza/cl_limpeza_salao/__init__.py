@@ -4,8 +4,9 @@ from PySimpleGUI import WIN_CLOSED
 
 
 class Tela_CLLS:
-    def __init__(self):
+    def __init__(self, Menu_CLL):
         self.window = None
+        self.MenuL = Menu_CLL
 
     def instantiate(self):
         if self.window == None:
@@ -16,9 +17,10 @@ class Tela_CLLS:
 
         while True:
             event, values = self.window.read()
-
-            if event == WIN_CLOSED:
-                self.close_window()
+            
+            if event in (WIN_CLOSED,'-Back-'):
+                self.window.close()
+                self.MenuL.unhide_window()
                 break
     
     def close_window(self):

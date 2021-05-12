@@ -1,24 +1,26 @@
-from CLO.cl_limpeza.cl_limpeza_bar import  view
+from CLO.cl_limpeza.cl_limpeza_bar import view
 import PySimpleGUI as sg
 from PySimpleGUI import WIN_CLOSED
 
 class Tela_CLLB:
-    def __init__(self):
+    def __init__(self, Menu_CLL):
         self.window = None
-
-    def instantiate(self): 
+        self.MenuL = Menu_CLL
+    
+    def instantiate(self):
         if self.window == None:
             self.window = view.get_window()
-    
+
     def enable_window(self):
-        self.instantiate()
+            self.instantiate()
 
-        while True:
-            event, values = self.window.read()
+            while True:
+                event, values = self.window.read()
 
-            if event == WIN_CLOSED:
-                self.close_window()
-                break
+                if event in (WIN_CLOSED,'-Back-'):
+                    self.window.close()
+                    self.MenuL.unhide_window()
+                    break
     
     def close_window(self):
         if self.window is not None:

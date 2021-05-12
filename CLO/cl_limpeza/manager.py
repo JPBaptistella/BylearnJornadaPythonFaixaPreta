@@ -1,6 +1,6 @@
-def initialize():
-    from CLO.cl_limpeza import Menu_Cl
+def initialize(menu):
+    from CLO.cl_limpeza import Menu_CLL
 
-    Menu= Menu_Cl()
-    Menu.enable_window()
+    MenuL = Menu_CLL(menu)
+    MenuL.enable_window()
     
