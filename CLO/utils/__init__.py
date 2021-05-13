@@ -1,7 +1,7 @@
 import PySimpleGUI as sg
 import os
 import sys
-import datetime
+from datetime import datetime
 
 def inner_element_space(width=100):
     return [sg.Text(' '*width, font=('Arial',1))]
@@ -20,7 +20,13 @@ def root_folder():
 def string_null_or_empty(string):
     return not string or string.isspace()
 
-def verificador_data():
+def dia_da_semana():
     dia_hoje = datetime.today().strftime('%A')
+
+    return dia_hoje
+
+def data_atual():
     data_atual= datetime.today()
     data_atual='{}'.format(data_atual.day)
+
+    return data_atual
